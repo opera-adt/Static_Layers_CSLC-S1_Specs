@@ -596,106 +596,91 @@
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">TBD</annotation>
+                      lang="en">Percentage of output pixels labeled as layover and shadow</annotation>
         </real>
         <real name="/metadata/quality_assurance/pixel_classification/percent_layover_pixels"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">TBD</annotation>
+                      lang="en">Percentage of output pixels labeled as layover</annotation>
         </real>
         <real name="/metadata/quality_assurance/pixel_classification/percent_shadow_pixels"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">TBD</annotation>
+                      lang="en">Percentage of output pixels labeled as shadow</annotation>
         </real>
         <real name="/metadata/quality_assurance/statistics/static_layers/heading_angle/max"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">Max of the heading angle of VV geocoded SLC</annotation>
+                      lang="en">Max of the heading angle of VV geocoded SLC</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/heading_angle/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">Mean of the heading angle of VV geocoded SLC</annotation>
+                      lang="en">Mean of the heading angle of VV geocoded SLC</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/heading_angle/min"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">Min of the heading angle of VV geocoded SLC</annotation>
+                      lang="en">Min of the heading angle of VV geocoded SLC</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/heading_angle/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">STD of the heading angle of VV geocoded SLC</annotation>
+                      lang="en">STD of the heading angle of VV geocoded SLC</annotation>
         </real>
         <real name="/metadata/quality_assurance/statistics/static_layers/incidence_angle/max"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">Max of the incidence angle of VV geocoded SLC</annotation>
+                      lang="en">Max of the incidence angle of VV geocoded SLC</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/incidence_angle/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">Mean of the incidence angle of VV geocoded SLC</annotation>
+                      lang="en">Mean of the incidence angle of VV geocoded SLC</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/incidence_angle/min"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">Min of the incidence angle of VV geocoded SLC</annotation>
+                      lang="en">Min of the incidence angle of VV geocoded SLC</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/incidence_angle/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">STD of the incidence angle of VV geocoded SLC</annotation>
+                      lang="en">STD of the incidence angle of VV geocoded SLC</annotation>
         </real>
         <real name="/metadata/quality_assurance/statistics/static_layers/local_incidence_angle/max"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">Max of the local incidence angle of VV geocoded SLC</annotation>
+                      lang="en">Max of the local incidence angle of VV geocoded SLC</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/local_incidence_angle/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">Mean of the local incidence angle of VV geocoded SLC</annotation>
+                      lang="en">Mean of the local incidence angle of VV geocoded SLC</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/local_incidence_angle/min"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">Min of the local incidence angle of VV geocoded SLC</annotation>
+                      lang="en">Min of the local incidence angle of VV geocoded SLC</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/local_incidence_angle/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">STD of the local incidence angle of VV geocoded SLC</annotation>
+                      lang="en">STD of the local incidence angle of VV geocoded SLC</annotation>
         </real>
       </nodes>
     </science>
@@ -738,6 +723,13 @@
                        lang="en">Length of orbit state vector datasets</annotation>
            <dimension extent="0"
                       name="orbitLength"/>
+    </shape>
+    <shape name="orbitInputFiles"
+           order="slowest...fastest">
+           <annotation app="conformance"
+                       lang="en">Number of orbit input files</annotation>
+           <dimension extent="0"
+                      name="orbitInputFiles"/>
     </shape>
     <shape name="2DShape"
            order="slowest...fastest">

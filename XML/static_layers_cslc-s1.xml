@@ -18,102 +18,13 @@
         <integer name="/identification/absolute_orbit_number"
                  shape="scalar"
                  signed="false"
-                 width="32">
+                 width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">Absolute orbit number</annotation>
+                      lang="en">Absolute orbit number</annotation>
         </integer>
-        <integer name="/identification/track_number"
-                 shape="scalar"
-                 signed="false"
-                 width="8">
-          <annotation app="conformance"
-                      lang="en"
-                      units="unitless">Track number</annotation>
-        </integer>
-        <string name="/identification/burst_id"
+        <string name="/identification/bounding_polygon"
                 shape="scalar"
-                length="10">
-          <annotation app="conformance"
-                      lang="en">Burst identification string (burst ID)</annotation>
-        </string>
-        <string length="0"
-                name="/identification/instrument_name"
-                shape="scalar">
-          <annotation app="conformance"
-                      lang="en">Instrument name</annotation>
-        </string>
-        <string length="0"
-                name="/identification/product_type"
-                shape="scalar">
-          <annotation app="conformance"
-                      lang="en">Product type</annotation>
-        </string>
-        <string length="0"
-                name="/identification/product_version"
-                shape="scalar">
-          <annotation app="conformance"
-                      lang="en">CSLC-S1 product version</annotation>
-        </string>
-        <string length="0"
-                name="/identification/product_specification_version"
-                shape="scalar">
-          <annotation app="conformance"
-                      lang="en">CSLC-S1 product specification version</annotation>
-        </string>
-        <string length="0"
-                name="/identification/look_direction"
-                shape="scalar">
-          <annotation app="conformance"
-                      lang="en">Look direction can be left or right</annotation>
-        </string>
-        <string length="0"
-                name="/identification/mission_id"
-                shape="scalar">
-          <annotation app="conformance"
-                      lang="en">Mission identifier</annotation>
-        </string>
-        <string length="0"
-                name="/identification/orbit_pass_direction"
-                shape="scalar">
-          <annotation app="conformance"
-                      lang="en">Orbit direction can be ascending or descending</annotation>
-        </string>
-        <string length="27"
-                name="/identification/zero_doppler_start_time"
-                shape="scalar">
-          <annotation app="conformance"
-                      lang="en">Azimuth start time of the product</annotation>
-        </string>
-        <string length="27"
-                name="/identification/zero_doppler_end_time"
-                shape="scalar">
-          <annotation app="conformance"
-                      lang="en">Azimuth stop time of the product</annotation>
-        </string>
-        <string  length="0"
-                 name="/identification/processing_center"
-                 shape="scalar">
-          <annotation app="conformance"
-                      lang="en">Name of the processing center that produced the product</annotation>
-        </string>
-        <string length="0"
-                name="/identification/is_geocoded"
-                shape="scalar">
-          <annotation app="conformance"
-                      lang="en">Boolean to indicate if product is in radar geometry or geocoded</annotation>
-        </string>
-        <string length="0"
-                name="/identification/product_level"
-                shape="scalar">
-          <annotation app="conformance"
-                      lang="en">L0A: Unprocessed instrument data; L0B: Reformatted,
-              unprocessed instrument data; L1: Processed instrument data in radar coordinates system;
-              and L2: Processed instrument data in geocoded coordinates system</annotation>
-        </string>
-        <string length="0"
-                name="/identification/bounding_polygon"
-                shape="scalar">
+                length="0">
                 <annotation app="conformance"
                             lang="en">OGR compatible WKT representation of bounding polygon of the image</annotation>
                 <annotation app="conformance"
@@ -121,17 +32,103 @@
                             epsg="4326"
                             units="degrees"></annotation>
         </string>
-        <string length="0"
-                name="/identification/radar_band"
-                shape="scalar">
+        <string name="/identification/burst_id"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">Burst identification string (burst ID)</annotation>
+        </string>
+        <string name="/identification/instrument_name"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">Instrument name</annotation>
+        </string>
+        <string name="/identification/is_geocoded"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">Boolean indicating if product is in radar geometry or geocoded</annotation>
+        </string>
+        <string name="/identification/look_direction"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">Look direction can be left or right</annotation>
+        </string>
+        <string name="/identification/mission_id"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">Mission identifier</annotation>
+        </string>
+        <string name="/identification/orbit_pass_direction"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">Orbit pass direction can be ascending or descending</annotation>
+        </string>
+        <string name="/identification/processing_center"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">Name of the processing center that produced the product</annotation>
+        </string>
+        <string name="/identification/processing_date_time"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">Data processing date and time</annotation>
+        </string>
+        <string name="/identification/product_level"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">L0A: Unprocessed instrument data; L0B: Reformatted, unprocessed instrument data; L1: Processed instrument data in radar coordinates system; and L2: Processed instrument data in geocoded coordinates system</annotation>
+        </string>
+        <string name="/identification/product_specification_version"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">CSLC-S1 product specification version</annotation>
+        </string>
+        <string name="/identification/product_type"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">Product type</annotation>
+        </string>
+        <string name="/identification/product_version"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">CSLC-S1 product version</annotation>
+        </string>
+        <string name="/identification/radar_band"
+                shape="scalar"
+                length="10">
           <annotation app="conformance"
                       lang="en">Radar band</annotation>
         </string>
-        <string length="0"
-                name="/identification/processing_date_time"
-                shape="scalar">
-            <annotation app="conformance"
-                          lang="en">Data processing date and time</annotation>
+        <integer name="/identification/track_number"
+                 shape="scalar"
+                 signed="false"
+                 width="64">
+          <annotation app="conformance"
+                      lang="en"
+                      units="unitless">Track number</annotation>
+        </integer>
+        <string name="/identification/zero_doppler_end_time"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">Azimuth stop time of product</annotation>
+        </string>
+        <string name="/identification/zero_doppler_start_time"
+                shape="scalar"
+                length="10">
+          <annotation app="conformance"
+                      lang="en">Azimuth start time of product</annotation>
         </string>
         <!-- End of product identification -->
 

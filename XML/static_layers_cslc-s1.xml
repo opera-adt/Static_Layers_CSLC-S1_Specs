@@ -164,46 +164,42 @@
                           lang="en"
                           units="meters">CF compliant dimension associated with the Y coordinate</annotation>
         </real>
-
         <real name="/data/heading_angle"
               shape="StaticLayersProductShape"
               width="32">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">The angle of the platform velocity vector with respect to the East , measured anti-clockwise positive</annotation>
+                      lang="en">Heading angle</annotation>
           <annotation app="io" />
         </real>
          <real name="/data/incidence_angle"
               shape="StaticLayersProductShape"
               width="32">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">Incidence angle</annotation>
+                      lang="en">Incidence angle</annotation>
           <annotation app="io" />
         </real>
         <real name="/data/local_incidence_angle"
               shape="StaticLayersProductShape"
               width="32">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">Local incidence angle</annotation>
+                      lang="en">Local incidence angle</annotation>
           <annotation app="io" />
         </real>
-        <real name="/data/layover_shadow_mask"
-              shape="StaticLayersProductShape"
-              width="32">
+        <integer name="/data/layover_shadow_mask"
+                 shape="StaticLayersProductShape"
+                 width="8">
           <annotation app="conformance"
-                      lang="en"
-                      units="radians">Layover shadow mask</annotation>
+                      lang="en">Layover shadow mask</annotation>
           <annotation app="io" />
-        </real>
+        </integer>
+
         <!-- Orbit information -->
         <!-- Scalars -->
         <string length="100"
                 name="/metadata/orbit/reference_epoch"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">Reference epoch of the state vector (format: YYYY-MM-DD HH:MM:SS.6f)</annotation>
+                            lang="en">Reference epoch of the state vectors (format: YYYY-MM-DD HH:MM:SS.6f)</annotation>
         </string>
         <string length="100"
                 name="/metadata/orbit/orbit_direction"
@@ -223,42 +219,42 @@
               width="64">
           <annotation app="conformance"
                       lang="en"
-                      units="meters">Platform position along x-direction with respect to WGS84 G1762 reference frame</annotation>
+                      units="meters">Platform position along x-direction with respect to the WGS84 G1762 reference frame</annotation>
         </real>
         <real name="/metadata/orbit/position_y"
               shape="orbitLength"
               width="64">
           <annotation app="conformance"
                       lang="en"
-                      units="meters">Platform position along y-direction with respect to WGS84 G1762 reference frame</annotation>
+                      units="meters">Platform position along y-direction with respect to the WGS84 G1762 reference frame</annotation>
         </real>
         <real name="/metadata/orbit/position_z"
               shape="orbitLength"
               width="64">
           <annotation app="conformance"
                       lang="en"
-                      units="meters">Platform position along z-direction with respect to WGS84 G1762 reference frame</annotation>
+                      units="meters">Platform position along z-direction with respect to the WGS84 G1762 reference frame</annotation>
         </real>
         <real name="/metadata/orbit/velocity_x"
               shape="orbitLength"
               width="64">
           <annotation app="conformance"
                       lang="en"
-                      units="meters per second">Platform velocity along x-direction with respect to WGS84 G1762 reference frame</annotation>
+                      units="meters per second">Platform velocity along x-direction with respect to the WGS84 G1762 reference frame</annotation>
         </real>
         <real name="/metadata/orbit/velocity_y"
               shape="orbitLength"
               width="64">
           <annotation app="conformance"
                       lang="en"
-                      units="meters per second">Platform velocity along y-direction with respect to WGS84 G1762 reference frame</annotation>
+                      units="meters per second">Platform velocity along y-direction with respect to the WGS84 G1762 reference frame</annotation>
         </real>
         <real name="/metadata/orbit/velocity_z"
               shape="orbitLength"
               width="64">
           <annotation app="conformance"
                       lang="en"
-                      units="meters per second">Platform velocity along z-direction with respect to WGS84 G1762 reference frame</annotation>
+                      units="meters per second">Platform velocity along z-direction with respect to the WGS84 G1762 reference frame</annotation>
         </real>
         <real name="/metadata/orbit/time"
               shape="orbitLength"
@@ -267,13 +263,15 @@
                       lang="en"
                       units="seconds">Time of the orbit state vectors relative to the reference epoch</annotation>
         </real>
-         <!-- Processing information -->
+
+        <!-- Processing information -->
         <string length="100"
                 name="/metadata/processing_information/runconfig"
                 shape="scalar">
                 <annotation app="conformance"
                             lang="en">Runconfiguration file used for processing</annotation>
         </string>
+        <!-- Processing information: algorithms -->
         <string length="100"
                 name="/metadata/processing_information/algorithms/COMPASS_version"
                 shape="scalar">
@@ -287,7 +285,7 @@
                             lang="en">ISCE3 version used for processing</annotation>
         </string>
         <string length="100"
-                name="/metadata/processing_information/algorithms/S1Reader_version"
+                name="/metadata/processing_information/algorithms/s1Reader_version"
                 shape="scalar">
                 <annotation app="conformance"
                             lang="en">S1 reader version used for processing</annotation>
@@ -302,19 +300,19 @@
                 name="/metadata/processing_information/algorithms/float_data_geocoding_interpolator"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">TBD</annotation>
-        </string>
-        <string length="100"
-                name="/metadata/processing_information/algorithms/uint_data_geocoding_interpolator"
-                shape="scalar">
-                <annotation app="conformance"
-                            lang="en">TBD</annotation>
+                            lang="en">Floating-point data geocoding interpolation method</annotation>
         </string>
         <string length="100"
                 name="/metadata/processing_information/algorithms/topography_algorithm"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">TBD</annotation>
+                            lang="en">Topography generation algorithm</annotation>
+        </string>
+        <string length="100"
+                name="/metadata/processing_information/algorithms/uint_data_geocoding_interpolator"
+                shape="scalar">
+                <annotation app="conformance"
+                            lang="en">Unsigned int geocoding interpolation method</annotation>
         </string>
         <!-- Processing information: input burst metadata -->
         <real name="/metadata/processing_information/input_burst_metadata/azimuth_steering_rate"
@@ -342,7 +340,7 @@
                 name="/metadata/processing_information/input_burst_metadata/ipf_version"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">Image Processing Facility software version</annotation>
+                            lang="en">Instrument Processing Facility software version</annotation>
         </string>
         <real name="/metadata/processing_information/input_burst_metadata/iw2_mid_range"
               shape="scalar"
@@ -409,8 +407,7 @@
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">Value of the weighting window coefficient used during processing</annotation>
+                      lang="en">Value of the weighting window coefficient used during processing</annotation>
         </real>
         <string length="100"
                 name="/metadata/processing_information/input_burst_metadata/range_window_type"
@@ -421,10 +418,9 @@
         <integer name="/metadata/processing_information/input_burst_metadata/rank"
                  shape="scalar"
                  signed="false"
-                 width="32">
+                 width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">The number of Pulse Repetition Intervals (PRI) between transmitted pulse and return echo</annotation>
+                      lang="en">The number of Pulse Repetition Intervals (PRI) between transmitted pulse and return echo</annotation>
         </integer>
         <string length="100"
                 name="/metadata/processing_information/input_burst_metadata/sensing_start"
@@ -441,10 +437,10 @@
         <integer name="/metadata/processing_information/input_burst_metadata/shape"
                  shape="2DShape"
                  signed="false"
-                 width="32">
+                 width="64">
           <annotation app="conformance"
                       lang="en"
-                      units="unitless">Shape (length, width) of the burst in radar coordinates</annotation>
+                      units="pixels">Shape (length, width) of the burst in radar coordinates</annotation>
         </integer>
         <real name="/metadata/processing_information/input_burst_metadata/slant_range_time"
               shape="scalar"
@@ -468,60 +464,54 @@
                       units="meters">Wavelength of the transmitted signal</annotation>
         </real>
         <real name="/metadata/processing_information/input_burst_metadata/azimuth_fm_rate/coeffs"
-              shape="polynomialCoefficientsLength"
+              shape="polynomialCoefficientsWidth"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">Azimuth FM-rate polynomial coefficients</annotation>
+                      lang="en">Coefficients of the azimuth FM-rate polynomial</annotation>
         </real>
         <real name="/metadata/processing_information/input_burst_metadata/azimuth_fm_rate/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">Mean of the polynomial</annotation>
+                      lang="en">Mean of the azimuth FM-rate polynomial</annotation>
         </real>
-        <real name="/metadata/processing_information/input_burst_metadata/azimuth_fm_rate/order"
-              shape="scalar"
-              width="64">
+        <integer name="metadata/processing_information/input_burst_metadata/azimuth_fm_rate/order"
+                 shape="scalar"
+                 signed="false"
+                 width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">Order of the polynomial</annotation>
-        </real>
+                      lang="en">Order of the azimuth FM-rate polynomial</annotation>
+        </integer>
         <real name="/metadata/processing_information/input_burst_metadata/azimuth_fm_rate/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">Standard deviation of the polynomial</annotation>
+                      lang="en">Standard deviation of the azimuth FM-rate polynomial</annotation>
         </real>
         <real name="/metadata/processing_information/input_burst_metadata/doppler/coeffs"
-              shape="polynomialCoefficientsLength"
+              shape="polynomialCoefficientsWidth"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">Doppler polynomial coefficients</annotation>
+                      lang="en">Doppler polynomial coefficients</annotation>
         </real>
         <real name="/metadata/processing_information/input_burst_metadata/doppler/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">Mean of the polynomial</annotation>
+                      lang="en">Mean of the Doppler polynomial</annotation>
         </real>
-        <real name="/metadata/processing_information/input_burst_metadata/doppler/order"
-              shape="scalar"
-              width="64">
+        <integer name="metadata/processing_information/input_burst_metadata/doppler/order"
+                 shape="scalar"
+                 signed="false"
+                 width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">Order of the polynomial</annotation>
-        </real>
+                      lang="en">Order of the Doppler polynomial</annotation>
+        </integer>
         <real name="/metadata/processing_information/input_burst_metadata/azimuth_fm_rate/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">Standard deviation of the polynomial</annotation>
+                      lang="en">Standard deviation of the Doppler polynomial</annotation>
         </real>
         <!-- Processing information: inputs -->
         <string length="100"
@@ -550,7 +540,7 @@
         </string>
         <string length="100"
                 name="/metadata/processing_information/inputs/orbit_files"
-                shape="scalar">
+                shape="orbitInputFiles">
                 <annotation app="conformance"
                             lang="en">List of input orbit files used</annotation>
         </string>
@@ -559,40 +549,35 @@
                  signed="false"
                  width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">Burst index relative other bursts in swath</annotation>
+                      lang="en">Burst index relative other bursts in swath</annotation>
         </integer>
         <integer name="/metadata/processing_information/inputs/burst_location_parameters/first_valid_line"
                  shape="scalar"
                  signed="false"
                  width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">First valid line for burst in measurement tiff</annotation>
+                      lang="en">First valid line for burst in measurement tiff</annotation>
         </integer>
         <integer name="/metadata/processing_information/inputs/burst_location_parameters/first_valid_sample"
                  shape="scalar"
                  signed="false"
                  width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">First valid sample for burst in measurement tiff</annotation>
+                      lang="en">First valid sample for burst in measurement tiff</annotation>
         </integer>
         <integer name="/metadata/processing_information/inputs/burst_location_parameters/last_valid_line"
                  shape="scalar"
                  signed="false"
                  width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">First valid sample for burst in measurement tiff</annotation>
+                      lang="en">First valid sample for burst in measurement tiff</annotation>
         </integer>
         <integer name="/metadata/processing_information/inputs/burst_location_parameters/last_valid_sample"
                  shape="scalar"
                  signed="false"
                  width="64">
           <annotation app="conformance"
-                      lang="en"
-                      units="unitless">Last valid sample for burst in measurement tiff</annotation>
+                      lang="en">Last valid sample for burst in measurement tiff</annotation>
         </integer>
         <string length="100"
                 name="/metadata/processing_information/inputs/burst_location_parameters/tiff_path"

@@ -164,21 +164,21 @@
                           lang="en"
                           units="meters">CF compliant dimension associated with the Y coordinate</annotation>
         </real>
-        <real name="/data/heading_angle"
+        <real name="/data/los_east"
               shape="StaticLayersProductShape"
               width="32">
           <annotation app="conformance"
-                      lang="en">Heading angle</annotation>
+                      lang="en">East component of LOS unit vector from target to sensor</annotation>
           <annotation app="io" />
         </real>
-         <real name="/data/incidence_angle"
+         <real name="/data/los_north"
               shape="StaticLayersProductShape"
               width="32">
           <annotation app="conformance"
-                      lang="en">Incidence angle</annotation>
+                      lang="en">North component of LOS unit vector from target to sensor</annotation>
           <annotation app="io" />
         </real>
-        <real name="/data/local_incidence_angle"
+        <real name="/data/local_incidence"
               shape="StaticLayersProductShape"
               width="32">
           <annotation app="conformance"
@@ -189,7 +189,7 @@
                  shape="StaticLayersProductShape"
                  width="8">
           <annotation app="conformance"
-                      lang="en">Layover shadow mask</annotation>
+                      lang="en">Layover shadow mask. 0=no layover, no shadow; 1=shadow; 2=layover; 3=shadow and layover.</annotation>
           <annotation app="io" />
         </integer>
 
@@ -285,7 +285,7 @@
                             lang="en">ISCE3 version used for processing</annotation>
         </string>
         <string length="100"
-                name="/metadata/processing_information/algorithms/s1Reader_version"
+                name="/metadata/processing_information/algorithms/s1_reader_version"
                 shape="scalar">
                 <annotation app="conformance"
                             lang="en">S1 reader version used for processing</annotation>
@@ -515,10 +515,10 @@
         </real>
         <!-- Processing information: inputs -->
         <string length="100"
-                name="/metadata/processing_information/inputs/calibration_file"
+                name="/metadata/processing_information/inputs/calibration_files"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">Input calibration file used</annotation>
+                            lang="en">List of input calibration file used for processing</annotation>
         </string>
         <string length="100"
                 name="/metadata/processing_information/inputs/dem_source"
@@ -533,10 +533,10 @@
                             lang="en">Input L1 RSLC file used</annotation>
         </string>
         <string length="100"
-                name="/metadata/processing_information/inputs/noise_file"
+                name="/metadata/processing_information/inputs/noise_files"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">Input noise file used</annotation>
+                            lang="en">List of input noise file used for processing</annotation>
         </string>
         <string length="100"
                 name="/metadata/processing_information/inputs/orbit_files"
@@ -610,77 +610,77 @@
           <annotation app="conformance"
                       lang="en">Percentage of output pixels labeled as shadow</annotation>
         </real>
-        <real name="/metadata/quality_assurance/statistics/static_layers/heading_angle/max"
+        <real name="/metadata/quality_assurance/statistics/static_layers/los_east/max"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Max of the heading angle of VV geocoded SLC</annotation>
+                      lang="en">Max of East LOS unit vector</annotation>
         </real>
-        <real name="metadata/quality_assurance/statistics/static_layers/heading_angle/mean"
+        <real name="metadata/quality_assurance/statistics/static_layers/los_east/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Mean of the heading angle of VV geocoded SLC</annotation>
+                      lang="en">Mean of East LOS unit vector</annotation>
         </real>
-        <real name="metadata/quality_assurance/statistics/static_layers/heading_angle/min"
+        <real name="metadata/quality_assurance/statistics/static_layers/los_east/min"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Min of the heading angle of VV geocoded SLC</annotation>
+                      lang="en">Min of East LOS unit vector</annotation>
         </real>
-        <real name="metadata/quality_assurance/statistics/static_layers/heading_angle/std"
+        <real name="metadata/quality_assurance/statistics/static_layers/los_east/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">STD of the heading angle of VV geocoded SLC</annotation>
+                      lang="en">STD of East LOS unit vector</annotation>
         </real>
-        <real name="/metadata/quality_assurance/statistics/static_layers/incidence_angle/max"
+        <real name="/metadata/quality_assurance/statistics/static_layers/los_north/max"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Max of the incidence angle of VV geocoded SLC</annotation>
+                      lang="en">Max of North LOS unit vector</annotation>
         </real>
-        <real name="metadata/quality_assurance/statistics/static_layers/incidence_angle/mean"
+        <real name="metadata/quality_assurance/statistics/static_layers/los_north/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Mean of the incidence angle of VV geocoded SLC</annotation>
+                      lang="en">Mean of North LOS unit vector</annotation>
         </real>
-        <real name="metadata/quality_assurance/statistics/static_layers/incidence_angle/min"
+        <real name="metadata/quality_assurance/statistics/static_layers/los_north/min"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Min of the incidence angle of VV geocoded SLC</annotation>
+                      lang="en">Min of North LOS unit vector</annotation>
         </real>
-        <real name="metadata/quality_assurance/statistics/static_layers/incidence_angle/std"
+        <real name="metadata/quality_assurance/statistics/static_layers/los_north/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">STD of the incidence angle of VV geocoded SLC</annotation>
+                      lang="en">STD of North LOS unit vector</annotation>
         </real>
-        <real name="/metadata/quality_assurance/statistics/static_layers/local_incidence_angle/max"
+        <real name="/metadata/quality_assurance/statistics/static_layers/local_incidence/max"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Max of the local incidence angle of VV geocoded SLC</annotation>
+                      lang="en">Max of the local incidence angle</annotation>
         </real>
-        <real name="metadata/quality_assurance/statistics/static_layers/local_incidence_angle/mean"
+        <real name="metadata/quality_assurance/statistics/static_layers/local_incidence/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
                       lang="en">Mean of the local incidence angle of VV geocoded SLC</annotation>
         </real>
-        <real name="metadata/quality_assurance/statistics/static_layers/local_incidence_angle/min"
+        <real name="metadata/quality_assurance/statistics/static_layers/local_incidence/min"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Min of the local incidence angle of VV geocoded SLC</annotation>
+                      lang="en">Min of the local incidence angle</annotation>
         </real>
-        <real name="metadata/quality_assurance/statistics/static_layers/local_incidence_angle/std"
+        <real name="metadata/quality_assurance/statistics/static_layers/local_incidence/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">STD of the local incidence angle of VV geocoded SLC</annotation>
+                      lang="en">STD of the local incidence angle</annotation>
         </real>
       </nodes>
     </science>

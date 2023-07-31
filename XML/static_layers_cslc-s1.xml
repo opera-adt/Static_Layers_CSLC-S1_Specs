@@ -178,7 +178,7 @@
                       lang="en">North component of LOS unit vector from target to sensor</annotation>
           <annotation app="io" />
         </real>
-        <real name="/data/local_incidence"
+        <real name="/data/local_incidence_angle"
               shape="StaticLayersProductShape"
               width="32">
           <annotation app="conformance"
@@ -658,25 +658,25 @@
           <annotation app="conformance"
                       lang="en">STD of North LOS unit vector</annotation>
         </real>
-        <real name="/metadata/quality_assurance/statistics/static_layers/local_incidence/max"
+        <real name="/metadata/quality_assurance/statistics/static_layers/local_incidence_angle/max"
               shape="scalar"
               width="64">
           <annotation app="conformance"
                       lang="en">Max of the local incidence angle</annotation>
         </real>
-        <real name="metadata/quality_assurance/statistics/static_layers/local_incidence/mean"
+        <real name="metadata/quality_assurance/statistics/static_layers/local_incidence_angle/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
                       lang="en">Mean of the local incidence angle of VV geocoded SLC</annotation>
         </real>
-        <real name="metadata/quality_assurance/statistics/static_layers/local_incidence/min"
+        <real name="metadata/quality_assurance/statistics/static_layers/local_incidence_angle/min"
               shape="scalar"
               width="64">
           <annotation app="conformance"
                       lang="en">Min of the local incidence angle</annotation>
         </real>
-        <real name="metadata/quality_assurance/statistics/static_layers/local_incidence/std"
+        <real name="metadata/quality_assurance/statistics/static_layers/local_incidence_angle/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"

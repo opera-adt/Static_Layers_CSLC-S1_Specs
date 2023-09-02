@@ -671,6 +671,7 @@
               width="64">
           <annotation app="conformance"
                       lang="en">STD of LOS North</annotation>
+
         </real>
         <real name="/metadata/quality_assurance/statistics/static_layers/local_incidence_angle/max"
               shape="scalar"

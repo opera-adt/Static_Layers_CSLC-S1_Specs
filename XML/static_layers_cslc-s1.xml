@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<algorithm name="L2_StaticLayersGeocodedSingleLookComplex"
+<algorithm name="L2_StaticLayersCoregisteredSingleLookComplex"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:noNamespaceSchemaLocation="">
     <product template="L2_CSLC_template">
@@ -7,11 +7,11 @@
     <science uid="sci_1">
       <!-- Global attributes for the product -->
       <annotation app="conformance" Conventions="CF-1.8"
-                                    title="OPERA L2_CSLC_S1 Static Layers Product"
+                                    title="OPERA L2_CSLC_S1_STATIC Product"
                                     institution="NASA JPL"
                                     mission_name="OPERA"
-                                    reference_document="TBD"
-                                    contact="operaops@jpl.nasa.gov"/>
+                                    reference_document="108762"
+                                    contact="opera-sds-ops@jpl.nasa.gov"/>
       <!-- End of global attributes for the product -->
       <nodes>
         <!-- Product Identification -->
@@ -134,6 +134,20 @@
 
         <!-- Main layers for data -->
         <!-- Scalars -->
+        <integer name="/data/projection"
+                 shape="scalar"
+                 signed="false"
+                 width="32">
+          <annotation app="conformance"
+                      lang="en"
+                      ellipsoid="Projection ellipsoid"
+                      epsg_code="Projection EPSG code"
+                      grid_mapping_name="Grid mapping variable name"
+                      inverse_flattening="Inverse flattening of the ellipsoidal figure"
+                      semi_major_axis="Semi-major axis"
+                      spatial_ref="Spatial reference"
+                      utm_zone_number="UTM zone number">Projection system</annotation>
+        </integer>
         <real name="/data/y_spacing"
               shape="scalar"
               width="64">
@@ -182,7 +196,7 @@
               shape="StaticLayersProductShape"
               width="32">
           <annotation app="conformance"
-                      lang="en">Local incidence angle</annotation>
+                      lang="en">Local incidence angle in degrees</annotation>
           <annotation app="io" />
         </real>
         <integer name="/data/layover_shadow_mask"
@@ -211,7 +225,7 @@
                 name="/metadata/orbit/orbit_type"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">PrOE (or) NOE (or) MOE (or) POE (or) Custom</annotation>
+                            lang="en">Type of orbit file used for processing. RESORB: restituted orbit ephemeris or POEORB: precise orbit ephemeris.</annotation>
         </string>
         <!-- 1D vectors -->
         <real name="/metadata/orbit/position_x"
@@ -269,7 +283,7 @@
                 name="/metadata/processing_information/runconfig"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">Runconfiguration file used for processing</annotation>
+                            lang="en">Run configuration file used to generate the CSLC-S1 product</annotation>
         </string>
         <!-- Processing information: algorithms -->
         <string length="100"
@@ -340,7 +354,7 @@
                 name="/metadata/processing_information/input_burst_metadata/ipf_version"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">Instrument Processing Facility software version</annotation>
+                            lang="en">ESA Instrument Processing Facility software version</annotation>
         </string>
         <real name="/metadata/processing_information/input_burst_metadata/iw2_mid_range"
               shape="scalar"
@@ -467,82 +481,82 @@
               shape="polynomialCoefficientsWidth"
               width="64">
           <annotation app="conformance"
-                      lang="en">Coefficients of the azimuth FM-rate polynomial</annotation>
+                      lang="en">Coefficients of the polynomial</annotation>
         </real>
         <real name="/metadata/processing_information/input_burst_metadata/azimuth_fm_rate/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Mean of the azimuth FM-rate polynomial</annotation>
+                      lang="en">Mean of the polynomial</annotation>
         </real>
         <integer name="metadata/processing_information/input_burst_metadata/azimuth_fm_rate/order"
                  shape="scalar"
                  signed="false"
                  width="64">
           <annotation app="conformance"
-                      lang="en">Order of the azimuth FM-rate polynomial</annotation>
+                      lang="en">Order of the polynomial</annotation>
         </integer>
         <real name="/metadata/processing_information/input_burst_metadata/azimuth_fm_rate/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Standard deviation of the azimuth FM-rate polynomial</annotation>
+                      lang="en">Standard deviation of the polynomial</annotation>
         </real>
         <real name="/metadata/processing_information/input_burst_metadata/doppler/coeffs"
               shape="polynomialCoefficientsWidth"
               width="64">
           <annotation app="conformance"
-                      lang="en">Doppler polynomial coefficients</annotation>
+                      lang="en">Coefficients of the polynomial</annotation>
         </real>
         <real name="/metadata/processing_information/input_burst_metadata/doppler/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Mean of the Doppler polynomial</annotation>
+                      lang="en">Mean of the polynomial</annotation>
         </real>
         <integer name="metadata/processing_information/input_burst_metadata/doppler/order"
                  shape="scalar"
                  signed="false"
                  width="64">
           <annotation app="conformance"
-                      lang="en">Order of the Doppler polynomial</annotation>
+                      lang="en">Order of the polynomial</annotation>
         </integer>
         <real name="/metadata/processing_information/input_burst_metadata/azimuth_fm_rate/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Standard deviation of the Doppler polynomial</annotation>
+                      lang="en">Standard deviation of the polynomial</annotation>
         </real>
         <!-- Processing information: inputs -->
         <string length="100"
                 name="/metadata/processing_information/inputs/calibration_files"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">List of input calibration file used for processing</annotation>
+                            lang="en">List of input calibration files used for processing</annotation>
         </string>
         <string length="100"
                 name="/metadata/processing_information/inputs/dem_source"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">Source DEM file</annotation>
+                            lang="en">Description of the DEM used for processing</annotation>
         </string>
         <string length="100"
                 name="/metadata/processing_information/inputs/l1_slc_files"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">Input L1 RSLC file used</annotation>
+                            lang="en">List of input L1 RSLC files used for processing</annotation>
         </string>
         <string length="100"
                 name="/metadata/processing_information/inputs/noise_files"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">List of input noise file used for processing</annotation>
+                            lang="en">List of input noise files used for processing</annotation>
         </string>
         <string length="100"
                 name="/metadata/processing_information/inputs/orbit_files"
                 shape="orbitInputFiles">
                 <annotation app="conformance"
-                            lang="en">List of input orbit files used</annotation>
+                            lang="en">List of input orbit files used for processing</annotation>
         </string>
         <integer name="/metadata/processing_information/inputs/burst_location_parameters/burst_index"
                  shape="scalar"
@@ -590,97 +604,98 @@
                 name="/metadata/quality_assurance/orbit_information/orbit_type"
                 shape="scalar">
                 <annotation app="conformance"
-                            lang="en">Type of orbit file used in processing</annotation>
+                            lang="en">Type of orbit file used for processing. RESORB: restituted orbit ephemeris or POEORB: precise orbit ephemeris</annotation>
         </string>
         <real name="/metadata/quality_assurance/pixel_classification/percent_combined_pixels"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Percentage of output pixels labeled as layover and shadow</annotation>
+                      lang="en">Percentage of output pixels labeled layover and shadow</annotation>
         </real>
         <real name="/metadata/quality_assurance/pixel_classification/percent_layover_pixels"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Percentage of output pixels labeled as layover</annotation>
+                      lang="en">Percentage of output pixels labeled layover</annotation>
         </real>
         <real name="/metadata/quality_assurance/pixel_classification/percent_shadow_pixels"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Percentage of output pixels labeled as shadow</annotation>
+                      lang="en">Percentage of output pixels labeled shadow</annotation>
         </real>
         <real name="/metadata/quality_assurance/statistics/static_layers/los_east/max"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Max of East LOS unit vector</annotation>
+                      lang="en">Max of LOS East</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/los_east/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Mean of East LOS unit vector</annotation>
+                      lang="en">Mean of LOS East</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/los_east/min"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Min of East LOS unit vector</annotation>
+                      lang="en">Min of LOS East</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/los_east/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">STD of East LOS unit vector</annotation>
+                      lang="en">STD of LOS East</annotation>
         </real>
         <real name="/metadata/quality_assurance/statistics/static_layers/los_north/max"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Max of North LOS unit vector</annotation>
+                      lang="en">Max of LOS North</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/los_north/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Mean of North LOS unit vector</annotation>
+                      lang="en">Mean of LOS North</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/los_north/min"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Min of North LOS unit vector</annotation>
+                      lang="en">Min of LOS North</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/los_north/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">STD of North LOS unit vector</annotation>
+                      lang="en">STD of LOS North</annotation>
+
         </real>
         <real name="/metadata/quality_assurance/statistics/static_layers/local_incidence_angle/max"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Max of the local incidence angle</annotation>
+                      lang="en">Max of local incidence angle</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/local_incidence_angle/mean"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Mean of the local incidence angle of VV geocoded SLC</annotation>
+                      lang="en">Mean of local incidence angle</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/local_incidence_angle/min"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">Min of the local incidence angle</annotation>
+                      lang="en">Min of local incidence angle</annotation>
         </real>
         <real name="metadata/quality_assurance/statistics/static_layers/local_incidence_angle/std"
               shape="scalar"
               width="64">
           <annotation app="conformance"
-                      lang="en">STD of the local incidence angle</annotation>
+                      lang="en">STD of local incidence angle</annotation>
         </real>
       </nodes>
     </science>
